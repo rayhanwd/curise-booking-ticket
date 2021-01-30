@@ -108,7 +108,7 @@
                         <p>Charge 10% VAT</p>
                     </div>
                     <div class="right">
-                        <p id="tax-amount">0</p>
+                        <p id="total-tax">0</p>
                     </div>
                 </div>
                 <hr>
@@ -117,7 +117,7 @@
                         <h4>Total</h4>
                     </div>
                     <div class="right">
-                        <p id="grand-total">0</p>
+                        <p id="net-total">0</p>
                     </div>
                 </div>
             </div>
@@ -158,10 +158,10 @@ const totalPrice = firstClassCount * 150 + economicCount * 100;
 document.getElementById('total-price').innerText = '$' + totalPrice;
 
 const tax = Math.round(totalPrice * 0.1);
-document.getElementById('tax-amount').innerText = '$' + tax;
+document.getElementById('total-tax').innerText = '$' + tax;
 
-const grandTotal = totalPrice + tax;
-document.getElementById('grand-total').innerText = '$' + grandTotal;
+const netTotal = totalPrice + tax;
+document.getElementById('net-total').innerText = '$' + netTotal;
 }
 
 function getInputValue(ticket) {
@@ -170,7 +170,7 @@ const ticketCount = parseInt(ticketInput.value);
 return ticketCount;
 }
 
-//sideshow handel......
+//sideshow handel......this is my bonus point, will be working when click the book now button
 document.getElementById('hideshow-handel').addEventListener('click',function(){
 document.getElementById('main_content').style.display = "none";
 document.getElementById('Confirmation').style.display = "block";
